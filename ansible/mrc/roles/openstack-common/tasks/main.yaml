@@ -11,6 +11,6 @@
 
 - name: Update pip
   ansible.builtin.pip:
-    name: ["pip", "openstacksdk==1.0.0"]
+    name: ["pip", "openstacksdk==1.0.1"]
     state: latest
 # pip install --upgrade pip && pip install openstacksdk
