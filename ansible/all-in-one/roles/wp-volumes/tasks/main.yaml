@@ -50,11 +50,3 @@
   when: item.device is defined
   with_items:
     - "{{ volumes }}"
-
-- name: Add mount entries to /etc/fstab
-  become: true
-  lineinfile:
-    path: /etc/fstab
-    line: "{{ item.device }}    {{ item.mountpoint }}    ext4    defaults    0    2"
-    state: present
-  with_items: "{{ volumes }}"
