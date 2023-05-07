@@ -2,7 +2,7 @@ import argparse
 import yaml
 import subprocess
 
-def generate_instances_volumes(n):
+def generate_instances(n):
     data = {
         'availability_zone': 'melbourne-qh2-uom',
         'instance_image': 'bbaf16f8-2484-48d7-b455-42209cc4b8d2',
@@ -53,7 +53,7 @@ def main():
         print('Please provide a positive number of instances and volumes.')
         return
 
-    data = generate_instances_volumes(args.n)
+    data = generate_instances(args.n)
 
     with open('./host_vars/output.yaml', 'w') as file:
         yaml.dump(data, file)
