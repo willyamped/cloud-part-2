@@ -1,6 +1,10 @@
+## How to Run
+`python3 main.py -n [N]` where N is the number of mastodon harvesters to be created
+
 ## Prerequisites
 1. `pip3.11 install ansible`
 2. `pip3 install openstacksdk`
+3. `pip3 install pyyaml`
 
 ## Versions
 ```
@@ -9,3 +13,6 @@
 3. OpenStackSDK 1.0.0 (in openstack-common/main.yml)
 4. OpenStack.Cloud 2.0.0 (in all-in-one.sh)
 ```
+
+## Issues
+1. If "Wait for connection" task fails, ensure that you are connected to VPN
