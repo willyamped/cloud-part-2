@@ -11,10 +11,21 @@
     dest: ~/.ssh/id_rsa
     mode: '0600'
 
-- name: Clone repository from GitHub
-  git:
-    repo: "{{ repo }}"
-    dest: /data
+- name: Add newline to id_rsa file
+  blockinfile:
+    path: ~/.ssh/id_rsa
+    marker: ""
+    insertafter: EOF
+    block: |
+
+- name: Check directory existence
+  stat:
+    path: "{{ code_directory }}"
+  register: dir_check
+
+- name: Clone repository from Github
+  shell: "git clone {{ repo }}"
+  when: dir_check.stat.exists is not defined or not dir_check.stat.exists
 
 - name: Remove SSH private key file
   ansible.builtin.file:

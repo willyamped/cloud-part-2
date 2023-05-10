@@ -5,3 +5,4 @@ volumes:
     
 ssh_key: "{{ lookup('env', 'PRIVATE_KEY') }}"
 repo: git@github.com:willyamped/cloud-part-2.git
+code_directory: ~/cloud-part-2
