@@ -2,3 +2,5 @@
 volumes:
   - device: /dev/vdb
     mountpoint: /data
+    
+ssh_key: "{{ lookup('env', 'PRIVATE_KEY') }}"

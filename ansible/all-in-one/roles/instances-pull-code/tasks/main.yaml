@@ -1,0 +1,22 @@
+---
+- name: Set up SSH directory
+  ansible.builtin.file:
+    path: ~/.ssh
+    state: directory
+    mode: '0700'
+
+- name: Create SSH private key file
+  ansible.builtin.copy:
+    content: "{{ ssh_key }}"
+    dest: ~/.ssh/id_rsa
+    mode: '0600'
+
+- name: Clone repository from GitHub
+  git:
+    repo: git@github.com:willyamped/cloud-part-2.git
+    dest: /data
+
+- name: Remove SSH private key file
+  ansible.builtin.file:
+    path: ~/.ssh/id_rsa
+    state: absent
