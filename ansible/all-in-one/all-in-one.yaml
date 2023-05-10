@@ -17,4 +17,4 @@
   roles:
     # - role: instances-format-volume
     # - role: instances-install-software
-    # - role: instances-pull-code
+    - role: instances-pull-code

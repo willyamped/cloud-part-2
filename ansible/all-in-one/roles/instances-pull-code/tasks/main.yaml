@@ -13,7 +13,7 @@
 
 - name: Clone repository from GitHub
   git:
-    repo: git@github.com:willyamped/cloud-part-2.git
+    repo: "{{ repo }}"
     dest: /data
 
 - name: Remove SSH private key file
