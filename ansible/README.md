@@ -1,4 +1,11 @@
 ## How to Run
+1. Export ssh private key
+```
+export PRIVATE_KEY="-----BEGIN RSA PRIVATE KEY-----
+<paste the private key content here>
+-----END RSA PRIVATE KEY-----"
+```
+2. Run the program
 `python3 main.py -n [N]` where N is the number of mastodon harvesters to be created
 
 ## Prerequisites
