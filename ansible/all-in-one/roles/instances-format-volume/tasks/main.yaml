@@ -44,3 +44,11 @@
   when: item.device is defined
   with_items:
     - "{{ volumes }}"
+
+- name: Change ownership of /data
+  file:
+    path: "{{ item.mountpoint }}"
+    owner: ubuntu
+    recurse: yes
+  with_items: 
+    - "{{ volumes }}"

@@ -20,11 +20,15 @@
 
 - name: Check directory existence
   stat:
-    path: "{{ code_directory }}"
+    path: "{{ item.mountpoint }}/{{ code_directory }}"
   register: dir_check
+  with_items: 
+    - "{{ volumes }}"
 
 - name: Clone repository from Github
-  shell: "git clone {{ repo }}"
+  shell: |
+    cd /data 
+    git clone {{ repo }}
   when: dir_check.stat.exists is not defined or not dir_check.stat.exists
 
 - name: Remove SSH private key file
