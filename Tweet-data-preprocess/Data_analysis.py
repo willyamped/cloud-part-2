@@ -14,13 +14,15 @@ def preprocess(input_file):
     with open(input_file, "r",encoding='UTF-8') as f:
         objects = ijson.items(f, "item")
         obj = next(objects, False)
+        
         requirement_word = ['covid', 'Covid','COVID']
         while obj != False:
             text1 = obj["data"]["text"]
             
             city = obj['includes']['places'][0]['full_name']
+            # Check if text contant word covid
             if any(word in text1 for word in requirement_word):
-
+            # Count tweets that contain word covid in each state
                 for i in States:
                     if i in city:
                         T1.append(i)
@@ -38,9 +40,9 @@ def main():
 
     # Preprocess data
     result = preprocess(input_file)
-    print(result)
+    
     result_df = pd.DataFrame.from_records(list(dict(result).items()), columns=['States','COVID-19 mentioned'])
-    print(result_df)
+    
 
     # Store data
     result_df.to_csv('C19_states.csv')
