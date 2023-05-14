@@ -1,0 +1,4 @@
+---
+- name: Create a database in CouchDB
+  shell: |
+    curl -XPUT "http://{{ db_user }}:{{ db_pass }}@{{ db_hostname }}:{{ db_port }}/willy-test"
