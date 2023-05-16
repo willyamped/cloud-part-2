@@ -1,4 +1,14 @@
 ---
-- name: Create a database in CouchDB
+- name: Run harvest code for 10 seconds
   shell: |
-    curl -XPUT "http://{{ db_user }}:{{ db_pass }}@{{ db_hostname }}:{{ db_port }}/willy-test"
+    cd "{{ mountpoint }}/{{ code_directory }}/harvest"
+    chmod +x secrets.sh
+    source ./secrets.sh
+    chmod +x run.sh
+    ./run.sh
+
+# - name: Pre-process harvested code
+
+# - name: Create a database in CouchDB
+#   shell: |
+#     curl -XPUT "http://{{ db_user }}:{{ db_pass }}@{{ db_hostname }}:{{ db_port }}/harvester-ansible"

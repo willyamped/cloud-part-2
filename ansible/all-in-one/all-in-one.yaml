@@ -17,5 +17,9 @@
   roles:
     # - role: instances-format-volume
     # - role: instances-install-software
-    # - role: instances-pull-code
+    - role: instances-pull-code
     - role: instances-store-data
+
+
+    TRY TO PULL CODE NOW BUT NEED TO EXPORT PRIVATE KEY AYE
+    I JUST CREATED A COPY SCRIPT AND SAVE IT IN HARVESTED_DATA.PY

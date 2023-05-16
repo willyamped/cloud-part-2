@@ -5,7 +5,9 @@ volumes:
     
 ssh_key: "{{ lookup('env', 'PRIVATE_KEY') }}"
 repo: git@github.com:willyamped/cloud-part-2.git
+mountpoint: /data
 code_directory: cloud-part-2
+
 
 db_user: grp77
 db_pass: grp77%402023
