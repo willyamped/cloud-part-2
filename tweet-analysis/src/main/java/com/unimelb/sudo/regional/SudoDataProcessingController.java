@@ -1,7 +1,11 @@
-package com.javadeveloperzone;
+package com.unimelb.sudo.regional;
+
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.List;
+import java.util.Set;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.auth.AuthScope;
@@ -14,23 +18,53 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
+import org.json.simple.JSONObject;
+import org.json.simple.JSONValue;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-public class PostJsonToCouchDB {
+@RestController
+public class SudoDataProcessingController {
+	
+	@GetMapping("/push")
+	public String triggerDataPush() {
+		String response  = "";
+		String hostpath ="/container/data/";
+		try {
+			FileReader fr = new FileReader(new File(hostpath+"abs_regional_population_sa2_2001_2021-4729138195600478386.json"));
+			BufferedReader br = new BufferedReader(fr);
+			String line;
+			while ((line = br.readLine()) != null) {
+				JSONObject object = (JSONObject) JSONValue.parse(line);
+				Set keySet = object.keySet();
+				System.out.println(keySet);
+				for (Object key : keySet) {
+					if(key.toString().equals("features")) {
+						List<JSONObject> list = (List<JSONObject>) object.get(key);
+//						list.forEach(jsonobj ->  uploadDataToCouchDB(jsonobj.toString()));
+						JSONObject json = list.get(1);
+						uploadDataToCouchDB(json.toString());
+					}
+				}
+			}
 
-    public static void main(String[] args) {
-        // Set the URL of the CouchDB database
-        String dbUrl = "http://localhost:5984/dummy";
+			response = "Data Pushed Successfully to Couch DB";
+		}catch(Exception e) {
+			e.printStackTrace();
+			response = "Data Push Failed to Couch DB";
+		}
+		
+		return response;
+	}
+	
+	private  void uploadDataToCouchDB(String json)
+	{
+		String dbUrl = "http://172.26.134.11:80/sample";
         
         try {
-            // Read JSON data from a file
-//            String jsonData = readJsonFromFile("E:\\kokila\\Cloud-Data\\mnt\\ext100\\tweet-files\\processed\\outfile1.json");
-            
-            String jsonData= "{\r\n"
-            		+ "	\"name\":\"koki\",\r\n"
-            		+ "	\"age\":\"27\"\r\n"
-            		+ "}";
-        	String username = "kokila";
-            String password = "kokila@2023";
+          
+        	String username = "grp77";
+            String password = "grp77@2023";
             // Create an HTTP POST request to CouchDB
             
             CredentialsProvider provider = new BasicCredentialsProvider();
@@ -45,7 +79,7 @@ public class PostJsonToCouchDB {
             HttpPost post = new HttpPost(dbUrl);
             
             // Set the request body as JSON data
-            StringEntity entity = new StringEntity(jsonData, ContentType.APPLICATION_JSON);
+            StringEntity entity = new StringEntity(json, ContentType.APPLICATION_JSON);
             post.setEntity(entity);
             
             // Send the request to CouchDB and print the response
@@ -56,17 +90,6 @@ public class PostJsonToCouchDB {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-    
-    // Read JSON data from a file
-    private static String readJsonFromFile(String fileName) throws IOException {
-        StringBuilder sb = new StringBuilder();
-        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                sb.append(line);
-            }
-        }
-        return sb.toString();
-    }
+	}
+
 }
