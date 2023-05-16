@@ -3,7 +3,7 @@
   shell: |
     cd "{{ mountpoint }}/{{ code_directory }}/harvest"
     chmod +x secrets.sh
-    source ./secrets.sh
+    . ./secrets.sh
     chmod +x run.sh
     ./run.sh
 

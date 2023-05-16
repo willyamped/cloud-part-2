@@ -20,10 +20,8 @@
 
 - name: Check directory existence
   stat:
-    path: "{{ item.mountpoint }}/{{ code_directory }}"
+    path: "{{ mountpoint }}/{{ code_directory }}"
   register: dir_check
-  with_items: 
-    - "{{ volumes }}"
 
 - name: Clone repository from Github
   shell: |
