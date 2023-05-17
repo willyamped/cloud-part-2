@@ -81,13 +81,16 @@ public class TweetProcessing implements Runnable {
 	public static void main(String[] args) {
 		ExecutorService executor = Executors.newFixedThreadPool(4);
 
-		TweetProcessing task1 = new TweetProcessing("E:\\kokila\\Cloud-Data\\mnt\\ext100\\split-files\\file53.txt","lockdown","E:\\\\kokila\\\\Cloud-Data\\\\mnt\\\\ext100\\\\split-files\\\\processed","outfile53.txt");
-		TweetProcessing task2 = new TweetProcessing("E:\\kokila\\Cloud-Data\\mnt\\ext100\\split-files\\file54.txt","lockdown","E:\\\\kokila\\\\Cloud-Data\\\\mnt\\\\ext100\\\\split-files\\\\processed","outfile54.txt");
-		TweetProcessing task3 = new TweetProcessing("E:\\kokila\\Cloud-Data\\mnt\\ext100\\split-files\\file55.txt","lockdown","E:\\\\kokila\\\\Cloud-Data\\\\mnt\\\\ext100\\\\split-files\\\\processed","outfile55.txt");
-		TweetProcessing task4 = new TweetProcessing("E:\\kokila\\Cloud-Data\\mnt\\ext100\\split-files\\file56.txt","lockdown","E:\\\\kokila\\\\Cloud-Data\\\\mnt\\\\ext100\\\\split-files\\\\processed","outfile56.txt");
-		TweetProcessing task5 = new TweetProcessing("E:\\kokila\\Cloud-Data\\mnt\\ext100\\split-files\\file57.txt","lockdown","E:\\\\kokila\\\\Cloud-Data\\\\mnt\\\\ext100\\\\split-files\\\\processed","outfile57.txt");
-		TweetProcessing task6 = new TweetProcessing("E:\\kokila\\Cloud-Data\\mnt\\ext100\\split-files\\file58.txt","lockdown","E:\\\\kokila\\\\Cloud-Data\\\\mnt\\\\ext100\\\\split-files\\\\processed","outfile58.txt");
-		TweetProcessing task7 = new TweetProcessing("E:\\kokila\\Cloud-Data\\mnt\\ext100\\split-files\\file59.txt","lockdown","E:\\\\kokila\\\\Cloud-Data\\\\mnt\\\\ext100\\\\split-files\\\\processed","outfile59.txt");
+//		TweetProcessing task1 = new TweetProcessing("E:\\kokila\\Cloud-Data\\mnt\\ext100\\split-files\\file1.txt","covid","E:\\\\kokila\\\\Cloud-Data\\\\mnt\\\\ext100\\\\split-files\\\\processed\\covid","covid1.json");
+//		TweetProcessing task2 = new TweetProcessing("E:\\kokila\\Cloud-Data\\mnt\\ext100\\split-files\\file2.txt","covid","E:\\\\kokila\\\\Cloud-Data\\\\mnt\\\\ext100\\\\split-files\\\\processed\\covid","covid2.json");
+//		TweetProcessing task3 = new TweetProcessing("E:\\kokila\\Cloud-Data\\mnt\\ext100\\split-files\\file3.txt","covid","E:\\\\kokila\\\\Cloud-Data\\\\mnt\\\\ext100\\\\split-files\\\\processed\\covid","covid3.json");
+//		TweetProcessing task4 = new TweetProcessing("E:\\kokila\\Cloud-Data\\mnt\\ext100\\split-files\\file4.txt","covid","E:\\\\kokila\\\\Cloud-Data\\\\mnt\\\\ext100\\\\split-files\\\\processed\\covid","covid4.json");
+		for(int i =9;i<60;i++) {
+			executor.submit(new TweetProcessing("E:\\kokila\\Cloud-Data\\mnt\\ext100\\split-files\\file"+i+".txt","covid","E:\\\\kokila\\\\Cloud-Data\\\\mnt\\\\ext100\\\\split-files\\\\processed\\covid","covid"+i+".json"));
+		}
+//		TweetProcessing task5 = new TweetProcessing("E:\\kokila\\Cloud-Data\\mnt\\ext100\\split-files\\file57.txt","lockdown","E:\\\\kokila\\\\Cloud-Data\\\\mnt\\\\ext100\\\\split-files\\\\processed","outfile57.txt");
+//		TweetProcessing task6 = new TweetProcessing("E:\\kokila\\Cloud-Data\\mnt\\ext100\\split-files\\file58.txt","lockdown","E:\\\\kokila\\\\Cloud-Data\\\\mnt\\\\ext100\\\\split-files\\\\processed","outfile58.txt");
+//		TweetProcessing task7 = new TweetProcessing("E:\\kokila\\Cloud-Data\\mnt\\ext100\\split-files\\file59.txt","lockdown","E:\\\\kokila\\\\Cloud-Data\\\\mnt\\\\ext100\\\\split-files\\\\processed","outfile59.txt");
 //		TweetProcessing task8 = new TweetProcessing("E:\\kokila\\Cloud-Data\\mnt\\ext100\\split-files\\file24.txt","lockdown","E:\\\\kokila\\\\Cloud-Data\\\\mnt\\\\ext100\\\\split-files\\\\processed","outfile24.txt");
 //		TweetProcessing task9 = new TweetProcessing("E:\\kokila\\Cloud-Data\\mnt\\ext100\\split-files\\file25.txt","lockdown","E:\\\\kokila\\\\Cloud-Data\\\\mnt\\\\ext100\\\\split-files\\\\processed","outfile25.txt");
 //		TweetProcessing task10 = new TweetProcessing("E:\\kokila\\Cloud-Data\\mnt\\ext100\\split-files\\file26.txt","lockdown","E:\\\\kokila\\\\Cloud-Data\\\\mnt\\\\ext100\\\\split-files\\\\processed","outfile26.txt");
@@ -118,13 +121,13 @@ public class TweetProcessing implements Runnable {
 //		TweetProcessing task35 = new TweetProcessing("E:\\kokila\\Cloud-Data\\mnt\\ext100\\split-files\\file51.txt","lockdown","E:\\\\kokila\\\\Cloud-Data\\\\mnt\\\\ext100\\\\split-files\\\\processed","outfile51.txt");
 //		TweetProcessing task36 = new TweetProcessing("E:\\kokila\\Cloud-Data\\mnt\\ext100\\split-files\\file52.txt","lockdown","E:\\\\kokila\\\\Cloud-Data\\\\mnt\\\\ext100\\\\split-files\\\\processed","outfile52.txt");
 
-		executor.submit(task1);
-		executor.submit(task2);
-		executor.submit(task3);
-		executor.submit(task4);
-		executor.submit(task5);
-		executor.submit(task6);
-		executor.submit(task7);
+//		executor.submit(task1);
+//		executor.submit(task2);
+//		executor.submit(task3);
+//		executor.submit(task4);
+//		executor.submit(task5);
+//		executor.submit(task6);
+//		executor.submit(task7);
 //		executor.submit(task8);
 //		executor.submit(task9);
 //		executor.submit(task10);
