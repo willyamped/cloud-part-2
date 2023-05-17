@@ -55,7 +55,7 @@ def main():
 
     data = generate_instances(args.n)
 
-    with open('./host_vars/output.yaml', 'w') as file:
+    with open('./host_vars/nectar.yaml', 'w') as file:
         yaml.dump(data, file)
     
     subprocess.run(["./run-all-in-one.sh"], shell = True)
