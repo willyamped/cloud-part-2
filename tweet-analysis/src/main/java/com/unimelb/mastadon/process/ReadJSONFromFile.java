@@ -15,7 +15,7 @@ public class ReadJSONFromFile {
 	    List<String> jsonStrings = new ArrayList<>();
 	    List<String> brackets = new ArrayList<>();
 	    StringBuilder jsonString = new StringBuilder();
-	    BufferedWriter bufferedWriter = Files.newBufferedWriter(Paths.get("E:\\kokila\\Cloud-Data\\mastadon\\processed\\outfile1.json"));
+	    BufferedWriter bufferedWriter = Files.newBufferedWriter(Paths.get("E:\\kokila\\Cloud-Data\\mastadon\\Mastodon data\\outfile2.json"));
 	    boolean firstRecord = true;
 	    String tempString = null;
 
@@ -54,7 +54,7 @@ public class ReadJSONFromFile {
 
 
 	public static void main(String[] args) throws IOException {
-		String filePath = "E:\\kokila\\Cloud-Data\\mastadon\\data.json";
+		String filePath = "E:\\kokila\\Cloud-Data\\mastadon\\Mastodon data\\data2.json";
 		List<String> jsonStrings = readJSONFromFile(filePath);
 		int count = 0;
 

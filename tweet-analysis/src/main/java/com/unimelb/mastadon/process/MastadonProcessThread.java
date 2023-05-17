@@ -10,6 +10,7 @@ import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import org.apache.commons.lang3.StringUtils;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 
@@ -66,7 +67,7 @@ public class MastadonProcessThread implements Runnable {
 
 			if (key.equals("content")) {
 				Object value = object.get(key);
-				if (value.toString().contains(searchString)) {
+				if (StringUtils.containsIgnoreCase(value.toString(),searchString)) {
 					return true;
 				}
 			}
@@ -79,7 +80,7 @@ public class MastadonProcessThread implements Runnable {
 	public static void main(String[] args) {
 		ExecutorService executor = Executors.newFixedThreadPool(4);
 
-		MastadonProcessThread task1 = new MastadonProcessThread("E:\\kokila\\Cloud-Data\\mastadon\\processed\\outfile1.json","covid","E:\\kokila\\Cloud-Data\\mastadon\\processed","filtered.json");
+		MastadonProcessThread task1 = new MastadonProcessThread("E:\\kokila\\Cloud-Data\\mastadon\\Mastodon data\\outfile2.json","lockdown","E:\\kokila\\Cloud-Data\\mastadon\\Mastodon data\\","lockdown1.json");
 		
 		executor.submit(task1);
 	
