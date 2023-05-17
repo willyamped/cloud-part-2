@@ -7,8 +7,12 @@
     chmod +x run.sh
     ./run.sh
 
-# - name: Pre-process harvested code
+- name: Create a database in CouchDB
+  shell: |
+    curl -XPUT "http://{{ db_user }}:{{ db_pass }}@{{ db_hostname }}:{{ db_port }}/harvester-ansible"
 
-# - name: Create a database in CouchDB
+# - name: Run a JAR file to pre-process data and store in CouchDB
 #   shell: |
-#     curl -XPUT "http://{{ db_user }}:{{ db_pass }}@{{ db_hostname }}:{{ db_port }}/harvester-ansible"
+#     cd "{{ mountpoint }}/{{ code_directory }}/ansible"
+#     java -jar process-and-upload.jar
+

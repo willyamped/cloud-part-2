@@ -25,6 +25,7 @@
 
 - name: Clone repository from Github
   shell: |
+    export GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no"
     cd /data 
     git clone {{ repo }}
   when: dir_check.stat.exists is not defined or not dir_check.stat.exists
