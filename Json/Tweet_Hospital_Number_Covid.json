@@ -1,10 +1,10 @@
 {"rows":[
-    {"key":"Australian Capital Territory","value": {"Tweet":44, "Hospital":8}}, 
-    {"key":"New South Wales","value": {"Tweet":565,"Hospital":321}}, 
-    {"key":"Northern Territory","value": {"Tweet":11,"Hospital":6}}, 
-    {"key":"Queensland","value": {"Tweet":459,"Hospital":260}}, 
-    {"key":"South Australia","value": {"Tweet":217,"Hospital":105}}, 
-    {"key":"Tasmania","value": {"Tweet":69,"Hospital":30}}, 
-    {"key":"Victoria","value": {"Tweet":722,"Hospital":234}}, 
-    {"key":"Western Australia","value": {"Tweet":239,"Hospital":112}}
+    {"key":"Australian Capital Territory","value":{"Tweet":44, "Hospital":8}}, 
+    {"key":"New South Wales","value":{"Tweet":565,"Hospital":321}}, 
+    {"key":"Northern Territory","value":{"Tweet":11,"Hospital":6}}, 
+    {"key":"Queensland","value":{"Tweet":459,"Hospital":260}}, 
+    {"key":"South Australia","value":{"Tweet":217,"Hospital":105}}, 
+    {"key":"Tasmania","value":{"Tweet":69,"Hospital":30}}, 
+    {"key":"Victoria","value":{"Tweet":722,"Hospital":234}}, 
+    {"key":"Western Australia","value":{"Tweet":239,"Hospital":112}}
 ]}
