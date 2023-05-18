@@ -1,17 +1,10 @@
 {"rows":[
-    {"key":"Melbourne","value":{"Tweet":542,"Hospital":111}},
-    {"key":"Sydney","value":{"Tweet":422,"Hospital":98}},
-    {"key":"Brisbone","value":{"Tweet":263,"Hospital":41}},
-    {"key":"Perth","value":{"Tweet":194,"Hospital":36}},
-    {"key":"Adelaide","value":{"Tweet":167,"Hospital":38}},
-    {"key":"Gold Coast","value":{"Tweet":59,"Hospital":0}},
-    {"key":"Canberra","value":{"Tweet":44,"Hospital":46}},
-    {"key":"Hobart","value":{"Tweet":39,"Hospital":3}},
-    {"key":"Newcastle","value":{"Tweet":28,"Hospital":8}},
-    {"key":"Central Coast","value":{"Tweet":23,"Hospital":8}},
-    {"key":"Wollongong","value":{"Tweet":21,"Hospital":7}},
-    {"key":"Geelong","value":{"Tweet":16,"Hospital":5}},
-    {"key":"Nambour","value":{"Tweet":16,"Hospital":3}},
-    {"key":"Sunshine Coast","value":{"Tweet":15,"Hospital":11}},
-    {"key":"St Georges Basin","value":{"Tweet":14,"Hospital":0}}
+    {"key":"Australian Capital Territory", "value": {"Tweet": 44, "Hospital": 8}}, 
+    {"key":"New South Wales", "value": {"Tweet": 565, "Hospital": 321}}, 
+    {"key":"Northern Territory", "value": {"Tweet": 11, "Hospital": 6}}, 
+    {"key":"Queensland", "value": {"Tweet": 459, "Hospital": 260}}, 
+    {"key":"South Australia", "value": {"Tweet": 217, "Hospital": 105}}, 
+    {"key":"Tasmania", "value": {"Tweet": 69, "Hospital": 30}}, 
+    {"key":"Victoria", "value": {"Tweet": 722, "Hospital": 234}}, 
+    {"key":"Western Australia", "value": {"Tweet": 239, "Hospital": 112}}
 ]}
