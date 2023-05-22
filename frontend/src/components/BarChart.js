@@ -1,11 +1,9 @@
 import { useRef, useEffect } from "react";
 import { select, axisBottom, axisLeft, scaleLinear, scaleBand } from "d3";
 
-const margin = { top: 60, right: 20, bottom: 80, left: 100 };
-const WIDTH = 1000 - margin.left - margin.right;
-const HEIGHT = 500 - margin.top - margin.bottom;
-
-const generateRandomColor = () => `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+const margin = { top: 110, right: 150, bottom: 80, left: 150 };
+const WIDTH = 1200 - margin.left - margin.right;
+const HEIGHT = 600 - margin.top - margin.bottom;
 
 function BarChart({ data, title, xLabel, yLabel }) {
   const svgRef = useRef();
@@ -66,17 +64,17 @@ function BarChart({ data, title, xLabel, yLabel }) {
       .attr("width", xScale.bandwidth())
       .transition()
       .attr("height", ({ value }) => HEIGHT - yScale(value))
-      .attr("fill", generateRandomColor());
+      .attr("fill", "#002884");
   }, [data, title, xLabel, yLabel]);
 
   return (
-    <svg ref={svgRef} style={{ margin: '50px', border: '1px solid black' }}>
-      <g className='chart' transform={`translate(${margin.left}, ${margin.top})`}>
-        <text className='title' />
+    <svg ref={svgRef} style={{ margin: "50px", border: "1px solid black" }}>
+      <g className="chart" transform={`translate(${margin.left}, ${margin.top})`}>
+        <text className="title" />
         <g className="x-axis" />
-        <text className='x-label' />
+        <text className="x-label" />
         <g className="y-axis" />
-        <text className='y-label' />
+        <text className="y-label" />
       </g>
     </svg>
   );

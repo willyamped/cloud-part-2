@@ -1,4 +1,6 @@
-![UI](ui.png)
+Link to frontend: http://172.26.130.79:3000/
+
+_Ps. Remember to connect to VPN before accessing_
 
 # Getting Started with Create React App
 

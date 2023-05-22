@@ -1,11 +1,9 @@
 import { useRef, useEffect } from "react";
 import { select, axisBottom, axisLeft, scaleLinear, scaleOrdinal, line } from "d3";
 
-const margin = { top: 60, right: 100, bottom: 80, left: 100 };
+const margin = { top: 110, right: 150, bottom: 80, left: 150 };
 const WIDTH = 1200 - margin.left - margin.right;
-const HEIGHT = 500 - margin.top - margin.bottom;
-
-const generateRandomColor = () => `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+const HEIGHT = 600 - margin.top - margin.bottom;
 
 function MultiLineChart({ data, title, xLabel, yLabel }) {
   const svgRef = useRef();
@@ -59,7 +57,7 @@ function MultiLineChart({ data, title, xLabel, yLabel }) {
     // colors
     const color = scaleOrdinal()
       .domain(Object.keys(data[0].value))
-      .range(Object.keys(data[0].value).map(generateRandomColor))
+      .range(["#002884", "#757ce8"])
 
     // legend
     svg.select(".legend")

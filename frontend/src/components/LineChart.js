@@ -1,9 +1,9 @@
 import { useRef, useEffect } from "react";
 import { select, axisBottom, axisLeft, scaleLinear, line } from "d3";
 
-const margin = { top: 60, right: 100, bottom: 80, left: 100 };
+const margin = { top: 110, right: 150, bottom: 80, left: 150 };
 const WIDTH = 1200 - margin.left - margin.right;
-const HEIGHT = 500 - margin.top - margin.bottom;
+const HEIGHT = 600 - margin.top - margin.bottom;
 
 function LineChart({ data, title, xLabel, yLabel }) {
   const svgRef = useRef();
@@ -65,7 +65,7 @@ function LineChart({ data, title, xLabel, yLabel }) {
       .attr("class", "line")
       .attr("d", myLine)
       .attr("fill", "none")
-      .attr("stroke", 'red')
+      .attr("stroke", "#002884")
   }, [data, title, xLabel, yLabel]);
 
   return (
