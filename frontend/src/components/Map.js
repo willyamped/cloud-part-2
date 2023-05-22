@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
-import { select, geoPath, geoMercator, geoEqualEarth, scaleLinear, zoom } from 'd3';
+import { select, geoPath, geoMercator, scaleLinear, zoom } from 'd3';
 import mapData from './../data/STE_2021_AUST_GDA20201.json';
 
 function Map({ data, property }) {

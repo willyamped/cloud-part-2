@@ -5,6 +5,8 @@ const margin = { top: 60, right: 20, bottom: 80, left: 100 };
 const WIDTH = 1000 - margin.left - margin.right;
 const HEIGHT = 500 - margin.top - margin.bottom;
 
+const generateRandomColor = () => `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+
 function BarChart({ data, title, xLabel, yLabel }) {
   const svgRef = useRef();
 
@@ -64,7 +66,7 @@ function BarChart({ data, title, xLabel, yLabel }) {
       .attr("width", xScale.bandwidth())
       .transition()
       .attr("height", ({ value }) => HEIGHT - yScale(value))
-      .attr("fill", 'teal');
+      .attr("fill", generateRandomColor());
   }, [data, title, xLabel, yLabel]);
 
   return (

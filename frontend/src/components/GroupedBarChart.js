@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import { select, axisBottom, axisLeft, scaleLinear, scaleBand, scaleOrdinal } from "d3";
 
-const margin = { top: 60, right: 100, bottom: 80, left: 80 };
+const margin = { top: 60, right: 100, bottom: 80, left: 150 };
 const WIDTH = 1200 - margin.left - margin.right;
 const HEIGHT = 500 - margin.top - margin.bottom;
 
