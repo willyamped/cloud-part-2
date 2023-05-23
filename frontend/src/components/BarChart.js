@@ -13,58 +13,60 @@ function BarChart({ data, title, xLabel, yLabel }) {
       .style("width", WIDTH + margin.left + margin.right)
       .style("height", HEIGHT + margin.top + margin.bottom);
 
-    // title
-    svg.select(".title")
-      .attr("x", WIDTH / 2)
-      .attr("y", -(margin.top / 2))
-      .attr("text-anchor", "middle")
-      .style("font-size", "20px")
-      .style("font-weight", "bold")
-      .text(title);
+    if (data) {
+      // title
+      svg.select(".title")
+        .attr("x", WIDTH / 2)
+        .attr("y", -(margin.top / 2))
+        .attr("text-anchor", "middle")
+        .style("font-size", "20px")
+        .style("font-weight", "bold")
+        .text(title);
 
-    // x-axis
-    const xScale = scaleBand()
-      .domain(data.map(({ key }) => key))
-      .range([0, WIDTH])
-      .padding(0.5);
-    svg.select(".x-axis")
-      .style("transform", `translateY(${HEIGHT}px)`)
-      .call(axisBottom(xScale));
+      // x-axis
+      const xScale = scaleBand()
+        .domain(data.map(({ key }) => key))
+        .range([0, WIDTH])
+        .padding(0.5);
+      svg.select(".x-axis")
+        .style("transform", `translateY(${HEIGHT}px)`)
+        .call(axisBottom(xScale));
 
-    // x-label
-    svg.select(".x-label")
-      .attr("transform", `translate(${WIDTH / 2}, ${HEIGHT + margin.bottom / 2})`)
-      .style("text-anchor", "middle")
-      .text(xLabel);
-    
-    // y-axis
-    const yScale = scaleLinear()
-      .domain([0, Math.max(...data.map(({ value }) => value))])
-      .range([HEIGHT, 0]);
-    svg.select(".y-axis")
-      .call(axisLeft(yScale));
+      // x-label
+      svg.select(".x-label")
+        .attr("transform", `translate(${WIDTH / 2}, ${HEIGHT + margin.bottom / 2})`)
+        .style("text-anchor", "middle")
+        .text(xLabel);
+      
+      // y-axis
+      const yScale = scaleLinear()
+        .domain([0, Math.max(...data.map(({ value }) => value))])
+        .range([HEIGHT, 0]);
+      svg.select(".y-axis")
+        .call(axisLeft(yScale));
 
-    // y-label
-    svg.select(".y-label")
-      .attr("transform", "rotate(-90)")
-      .attr("x", -(HEIGHT / 2))
-      .attr("y", -(margin.left / 2))
-      .style("text-anchor", "middle")
-      .text(yLabel);
-    
-    // bars
-    svg.select(".chart")
-      .selectAll(".bar")
-      .data(data)
-      .join("rect")
-      .attr("class", "bar")
-      .style("transform", "scale(1, -1)")
-      .attr("x", ({ key }) => xScale(key))
-      .attr("y", -1 * HEIGHT)
-      .attr("width", xScale.bandwidth())
-      .transition()
-      .attr("height", ({ value }) => HEIGHT - yScale(value))
-      .attr("fill", "#002884");
+      // y-label
+      svg.select(".y-label")
+        .attr("transform", "rotate(-90)")
+        .attr("x", -(HEIGHT / 2))
+        .attr("y", -(margin.left / 2))
+        .style("text-anchor", "middle")
+        .text(yLabel);
+      
+      // bars
+      svg.select(".chart")
+        .selectAll(".bar")
+        .data(data)
+        .join("rect")
+        .attr("class", "bar")
+        .style("transform", "scale(1, -1)")
+        .attr("x", ({ key }) => xScale(key))
+        .attr("y", -1 * HEIGHT)
+        .attr("width", xScale.bandwidth())
+        .transition()
+        .attr("height", ({ value }) => HEIGHT - yScale(value))
+        .attr("fill", "#002884");
+    }
   }, [data, title, xLabel, yLabel]);
 
   return (

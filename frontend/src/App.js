@@ -1,4 +1,5 @@
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 import HomeIcon from "@mui/icons-material/Home";
 import TimelineIcon from "@mui/icons-material/Timeline";
@@ -15,22 +16,22 @@ import Typography from "@mui/material/Typography";
 
 import BarChart from "./components/BarChart";
 import GroupedBarChartDualYAxes from "./components/GroupedBarChartDualYAxes";
-import LineChart from "./components/LineChart";
 import MultiLineChart from "./components/MultiLineChart";
 
 import mastodonLanguageData from "./data/Language_Mastodon.json";
-import tweetCovidLanguageData from "./data/language_Covid.json";
-import tweetLockdownLanguageData from "./data/language_Lockdown.json"
-import tweetCovidHospitalData from "./data/Tweet_Hospital_Number_Covid.json";
-import tweetLockdownHospitalData from "./data/Tweet_Hospital_Number_Lockdown.json";
-import mastodonTimelineData from "./data/Time_Line_Mastodon.json";
-import tweetTimelineData from "./data/time_line_Lockdown_Covid.json";
-import tweetCovidPopulationData from "./data/S_#TC_P.json";
-import tweetLockdownPopulationData from "./data/S_#TL_P.json";
 import covidImg from "./data/covid.jpg";
 
 import "./App.css";
 import MultiLineChartDualYAxes from './components/MultiLineChartDualYAxes';
+
+const populationUrl = "http://172.26.134.11/sudo-regional-population/_design/populaiton/_view/polulation?reduce=true&group=true";
+const hospitalUrl = "http://172.26.134.11/sudo-hospital-beds/_design/Hospital/_view/hospital%20number?reduce=true&group=true";
+const tweetCovidTimelineUrl = "http://172.26.134.11/tweets-covid/_design/covid/_view/Timeline?reduce=true&group=true";
+const tweetCovidStateUrl = "http://172.26.134.11/tweets-covid/_design/covid/_view/Location?reduce=true&group=true";
+const tweetCovidLanguageUrl = "http://172.26.134.11/tweets-covid/_design/covid/_view/language?reduce=true&group=true";
+const tweetLockdownTimelineUrl = "http://172.26.134.11/tweets-lockdown/_design/lockdown/_view/Timeline?reduce=true&group=true";
+const tweetLockdownStateUrl = "http://172.26.134.11/tweets-lockdown/_design/lockdown/_view/Location?reduce=true&group=true";
+const tweetLockdownLanguageUrl = "http://172.26.134.11/tweets-lockdown/_design/lockdown/_view/language?reduce=true&group=true";
 
 function TabPanel(props) {
   return (
@@ -45,9 +46,219 @@ function TabPanel(props) {
 function App() {
   const [value, setValue] = useState(0);
 
+  const [hospitalData, setHospitalData] = useState([]);
+  const [populationData, setPopulationData] = useState([]);
+  const [tweetCovidTimelineData, setTweetCovidTimelineData] = useState([]);
+  const [tweetCovidStateData, setTweetCovidStateData] = useState([]);
+  const [tweetCovidLanguageData, setTweetCovidLanguageData] = useState([]);
+  const [tweetLockdownTimelineData, setTweetLockdownTimelineData] = useState([]);
+  const [tweetLockdownStateData, setTweetLockdownStateData] = useState([]);
+  const [tweetLockdownLanguageData, setTweetLockdownLanguageData] = useState([]);
+
+  const [tweetTimelineData, setTweetTimelineData] = useState([]);
+  const [tweetCovidHospitalData, setTweetCovidHospitalData] = useState([]);
+  const [tweetCovidHospitalData2, setTweetCovidHospitalData2] = useState([]);
+  const [tweetLockdownHospitalData, setTweetLockdownHospitalData] = useState([]);
+  const [tweetLockdownHospitalData2, setTweetLockdownHospitalData2] = useState([]);
+  const [tweetCovidPopulationData, setTweetCovidPopulationData] = useState([]);
+  const [tweetCovidPopulationData2, setTweetCovidPopulationData2] = useState([]);
+  const [tweetLockdownPopulationData, setTweetLockdownPopulationData] = useState([]);
+  const [tweetLockdownPopulationData2, setTweetLockdownPopulationData2] = useState([]);
+
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  useEffect(() => {
+    axios.get(hospitalUrl).then((response) => {
+      setHospitalData(response.data);
+    });
+    axios.get(populationUrl).then((response) => {
+      setPopulationData(response.data);
+    });
+    axios.get(tweetCovidTimelineUrl).then((response) => {
+      setTweetCovidTimelineData(response.data);
+    });
+    axios.get(tweetCovidStateUrl).then((response) => {
+      setTweetCovidStateData(response.data);
+    });
+    axios.get(tweetCovidLanguageUrl).then((response) => {
+      setTweetCovidLanguageData(response.data.rows.filter(({ key }) => key !== "en"));
+    });
+    axios.get(tweetLockdownTimelineUrl).then((response) => {
+      setTweetLockdownTimelineData(response.data);
+    });
+    axios.get(tweetLockdownStateUrl).then((response) => {
+      setTweetLockdownStateData(response.data);
+    });
+    axios.get(tweetLockdownLanguageUrl).then((response) => {
+      setTweetLockdownLanguageData(response.data.rows.filter(({ key }) => key !== "en"));
+    });
+  }, [])
+
+  useEffect(() => {
+    if (tweetCovidTimelineData?.rows && tweetLockdownTimelineData?.rows) {
+      setTweetTimelineData([
+        { 
+          "key": "Covid",
+          "value": tweetCovidTimelineData.rows 
+        },
+        { 
+          "key": "Lockdown",
+          "value": tweetLockdownTimelineData.rows
+        }
+      ])
+    }
+  }, [tweetCovidTimelineData, tweetLockdownTimelineData])
+  useEffect(() => {
+    if (hospitalData?.rows && tweetCovidStateData?.rows) {
+      const states = hospitalData.rows.map(({ key }) => key)
+      
+      // multi line chart
+      const reducedTweetCovidStateData = []
+      for (let i = 0; i < states.length; i++) {
+        reducedTweetCovidStateData.push({
+          "key": states[i],
+          "value": tweetCovidStateData.rows.filter(({ key }) => key === states[i])[0]['value']
+        })
+      }
+      setTweetCovidHospitalData([
+        { 
+          "key": "Tweet",
+          "value": reducedTweetCovidStateData
+        },
+        { 
+          "key": "Hospital",
+          "value": hospitalData.rows 
+        }
+      ])
+
+      // grouped bar chart
+      const temp = []
+      for (let i = 0; i < states.length; i++) {
+        temp.push({
+          "key": states[i],
+          "value": {
+            "Tweet": tweetCovidStateData.rows.filter(({ key }) => key === states[i])[0]['value'],
+            "Hospital": hospitalData.rows.filter(({ key }) => key === states[i])[0]['value']
+          }
+        })
+      }
+      setTweetCovidHospitalData2(temp)
+    }
+  }, [hospitalData, tweetCovidStateData])
+  useEffect(() => {
+    if (hospitalData?.rows && tweetLockdownStateData?.rows) {
+      const states = hospitalData.rows.map(({ key }) => key)
+      
+      // multi line chart
+      const reducedTweetLockdownStateData = []
+      for (let i = 0; i < states.length; i++) {
+        reducedTweetLockdownStateData.push({
+          "key": states[i],
+          "value": tweetLockdownStateData.rows.filter(({ key }) => key === states[i])[0]['value']
+        })
+      }
+      setTweetLockdownHospitalData([
+        { 
+          "key": "Tweet",
+          "value": reducedTweetLockdownStateData
+        },
+        { 
+          "key": "Hospital",
+          "value": hospitalData.rows 
+        }
+      ])
+
+      // grouped bar chart
+      const temp = []
+      for (let i = 0; i < states.length; i++) {
+        temp.push({
+          "key": states[i],
+          "value": {
+            "Tweet": tweetLockdownStateData.rows.filter(({ key }) => key === states[i])[0]['value'],
+            "Hospital": hospitalData.rows.filter(({ key }) => key === states[i])[0]['value']
+          }
+        })
+      }
+      setTweetLockdownHospitalData2(temp)
+    }
+  }, [hospitalData, tweetLockdownStateData])
+  useEffect(() => {
+    if (populationData?.rows && tweetCovidStateData?.rows) {
+      const states = tweetCovidStateData.rows.map(({ key }) => key)
+
+      // multi line chart
+      let reducedPopulationData = []
+      for (let i = 0; i < states.length; i++) {
+        reducedPopulationData.push({
+          "key": states[i],
+          "value": populationData.rows.filter(({ key }) => key === states[i])[0]['value']
+        })
+      }
+      setTweetCovidPopulationData([
+        { 
+          "key": "Tweet",
+          "value": tweetCovidStateData.rows
+        },
+        { 
+          "key": "Population",
+          "value": reducedPopulationData
+        }
+      ])
+
+      // grouped bar chart
+      const temp = []
+      for (let i = 0; i < states.length; i++) {
+        temp.push({
+          "key": states[i],
+          "value": {
+            "Tweet": tweetCovidStateData.rows.filter(({ key }) => key === states[i])[0]['value'],
+            "Population": populationData.rows.filter(({ key }) => key === states[i])[0]['value']
+          }
+        })
+      }
+      setTweetCovidPopulationData2(temp)
+    }
+  }, [populationData, tweetCovidStateData])
+  useEffect(() => {
+    if (populationData?.rows && tweetLockdownStateData?.rows) {
+      const states = tweetLockdownStateData.rows.map(({ key }) => key)
+
+      // multi line chart
+      let reducedPopulationData = []
+      for (let i = 0; i < states.length; i++) {
+        reducedPopulationData.push({
+          "key": states[i],
+          "value": populationData.rows.filter(({ key }) => key === states[i])[0]['value']
+        })
+      }
+      setTweetLockdownPopulationData([
+        { 
+          "key": "Tweet",
+          "value": tweetLockdownStateData.rows
+        },
+        { 
+          "key": "Population",
+          "value": reducedPopulationData
+        }
+      ])
+
+      // grouped bar chart
+      const temp = []
+      for (let i = 0; i < states.length; i++) {
+        temp.push({
+          "key": states[i],
+          "value": {
+            "Tweet": tweetLockdownStateData.rows.filter(({ key }) => key === states[i])[0]['value'],
+            "Population": populationData.rows.filter(({ key }) => key === states[i])[0]['value']
+          }
+        })
+      }
+      setTweetLockdownPopulationData2(temp)
+    }
+  }, [populationData, tweetLockdownStateData])
+  
 
   return (
     <div>
@@ -103,25 +314,24 @@ function App() {
           </Box>
         </TabPanel>
         <TabPanel value={value} index={1}>
-          <MultiLineChart data={tweetTimelineData.rows} title={"Number of Tweets mentioning 'Lockdown' and 'Covid' Timeline"} xLabel={"Month"} yLabel={"Count"} /> 
-          <LineChart data={mastodonTimelineData.rows} title={"Number of Mastodon Toots Timeline"} xLabel={"Month"} yLabel={"Count"} />
+          <MultiLineChart data={tweetTimelineData} title={"Number of Tweets mentioning 'Lockdown' and 'Covid' Timeline"} xLabel={"Month"} yLabel={"Count"} /> 
         </TabPanel>
         <TabPanel value={value} index={2}>
-          <BarChart data={tweetCovidLanguageData.rows} title={"Language used in Tweets mentioning 'Covid' Count"} xLabel={"Language"} yLabel={"Count"} />
-          <BarChart data={tweetLockdownLanguageData.rows} title={"Language used in Tweets mentioning 'Lockdown' Count"} xLabel={"Language"} yLabel={"Count"} />
+          <BarChart data={tweetCovidLanguageData} title={"Language used in Tweets mentioning 'Covid' Count"} xLabel={"Language"} yLabel={"Count"} />
+          <BarChart data={tweetLockdownLanguageData} title={"Language used in Tweets mentioning 'Lockdown' Count"} xLabel={"Language"} yLabel={"Count"} />
           <BarChart data={mastodonLanguageData.rows} title={"Language used in Mastodon Toots Count"} xLabel={"Language"} yLabel={"Count"} />
         </TabPanel>
         <TabPanel value={value} index={3}>
-          <MultiLineChartDualYAxes data={tweetCovidHospitalData.rows} title={"Number of Tweets mentioning 'Covid' and Number of Hospital in each State"} xLabel={"State"} yLeftLabel={"Tweet Count"} yRightLabel={"Hospital Count"} />
-          <GroupedBarChartDualYAxes data={tweetCovidHospitalData.rows} title={"Number of Tweets mentioning 'Covid' and Number of Hospital in each State"} xLabel={"State"} yLeftLabel={"Tweet Count"} yRightLabel={"Hospital Count"} />
-          <MultiLineChartDualYAxes data={tweetLockdownHospitalData.rows} title={"Number of Tweets mentioning 'Lockdown' and Number of Hospital in each State"} xLabel={"State"} yLeftLabel={"Tweet Count"} yRightLabel={"Hospital Count"} />
-          <GroupedBarChartDualYAxes data={tweetLockdownHospitalData.rows} title={"Number of Tweets mentioning 'Lockdown' and Number of Hospital in each State"} xLabel={"State"} yLeftLabel={"Tweet Count"} yRightLabel={"Hospital Count"} />
+          <MultiLineChartDualYAxes data={tweetCovidHospitalData} title={"Number of Tweets mentioning 'Covid' and Number of Hospital in each State"} xLabel={"State"} yLeftLabel={"Tweet Count"} yRightLabel={"Hospital Count"} />
+          <GroupedBarChartDualYAxes data={tweetCovidHospitalData2} title={"Number of Tweets mentioning 'Covid' and Number of Hospital in each State"} xLabel={"State"} yLeftLabel={"Tweet Count"} yRightLabel={"Hospital Count"} />
+          <MultiLineChartDualYAxes data={tweetLockdownHospitalData} title={"Number of Tweets mentioning 'Lockdown' and Number of Hospital in each State"} xLabel={"State"} yLeftLabel={"Tweet Count"} yRightLabel={"Hospital Count"} />
+          <GroupedBarChartDualYAxes data={tweetLockdownHospitalData2} title={"Number of Tweets mentioning 'Lockdown' and Number of Hospital in each State"} xLabel={"State"} yLeftLabel={"Tweet Count"} yRightLabel={"Hospital Count"} />
         </TabPanel>
         <TabPanel value={value} index={4}>
           <MultiLineChartDualYAxes data={tweetCovidPopulationData} title={"Number of Tweets mentioning 'Covid' and Population Size in each State"} xLabel={"State"} yLeftLabel={"Tweet Count"} yRightLabel={"Population Size"} />
-          <GroupedBarChartDualYAxes data={tweetCovidPopulationData} title={"Number of Tweets mentioning 'Covid' and Population Size in each State"} xLabel={"State"} yLeftLabel={"Tweet Count"} yRightLabel={"Population Size"} />
+          <GroupedBarChartDualYAxes data={tweetCovidPopulationData2} title={"Number of Tweets mentioning 'Covid' and Population Size in each State"} xLabel={"State"} yLeftLabel={"Tweet Count"} yRightLabel={"Population Size"} />
           <MultiLineChartDualYAxes data={tweetLockdownPopulationData} title={"Number of Tweets mentioning 'Lockdown' and Population Size in each State"} xLabel={"State"} yLeftLabel={"Tweet Count"} yRightLabel={"Population Size"} />
-          <GroupedBarChartDualYAxes data={tweetLockdownPopulationData} title={"Number of Tweets mentioning 'Lockdown' and Population Size in each State"} xLabel={"State"} yLeftLabel={"Tweet Count"} yRightLabel={"Population Size"} />
+          <GroupedBarChartDualYAxes data={tweetLockdownPopulationData2} title={"Number of Tweets mentioning 'Lockdown' and Population Size in each State"} xLabel={"State"} yLeftLabel={"Tweet Count"} yRightLabel={"Population Size"} />
         </TabPanel>
       </Box>
     </div>
