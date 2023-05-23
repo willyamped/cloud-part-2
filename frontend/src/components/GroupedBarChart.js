@@ -105,14 +105,14 @@ function GroupedBarChart({ data, title, xLabel, yLabel }) {
   }, [data, title, xLabel, yLabel]);
 
   return (
-    <svg ref={svgRef} style={{ margin: '50px', border: '1px solid black' }}>
-      <g className='chart' transform={`translate(${margin.left}, ${margin.top})`}>
-        <text className='title' />
+    <svg ref={svgRef} style={{ margin: "50px", border: "1px solid black" }}>
+      <g className="chart" transform={`translate(${margin.left}, ${margin.top})`}>
+        <text className="title" />
         <g className="x-axis" />
-        <text className='x-label' />
+        <text className="x-label" />
         <g className="y-axis" />
-        <text className='y-label' />
-        <g className='legend' />
+        <text className="y-label" />
+        <g className="legend" />
       </g>
     </svg>
   );

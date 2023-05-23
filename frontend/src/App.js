@@ -30,6 +30,7 @@ import tweetLockdownPopulationData from "./data/S_#TL_P.json";
 import covidImg from "./data/covid.jpg";
 
 import "./App.css";
+import MultiLineChartDualYAxes from './components/MultiLineChartDualYAxes';
 
 function TabPanel(props) {
   return (
@@ -42,7 +43,7 @@ function TabPanel(props) {
 }
 
 function App() {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(1);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -111,12 +112,16 @@ function App() {
           <BarChart data={mastodonLanguageData.rows} title={"Language used in Mastodon Toots Count"} xLabel={"Language"} yLabel={"Count"} />
         </TabPanel>
         <TabPanel value={value} index={3}>
+          <MultiLineChartDualYAxes data={tweetCovidHospitalData.rows} title={"Number of Tweets mentioning 'Covid' and Number of Hospital in each State"} xLabel={"State"} yLeftLabel={"Tweet Count"} yRightLabel={"Hospital Count"} />
           <GroupedBarChartDualYAxes data={tweetCovidHospitalData.rows} title={"Number of Tweets mentioning 'Covid' and Number of Hospital in each State"} xLabel={"State"} yLeftLabel={"Tweet Count"} yRightLabel={"Hospital Count"} />
+          <MultiLineChartDualYAxes data={tweetLockdownHospitalData.rows} title={"Number of Tweets mentioning 'Lockdown' and Number of Hospital in each State"} xLabel={"State"} yLeftLabel={"Tweet Count"} yRightLabel={"Hospital Count"} />
           <GroupedBarChartDualYAxes data={tweetLockdownHospitalData.rows} title={"Number of Tweets mentioning 'Lockdown' and Number of Hospital in each State"} xLabel={"State"} yLeftLabel={"Tweet Count"} yRightLabel={"Hospital Count"} />
         </TabPanel>
         <TabPanel value={value} index={4}>
-          <GroupedBarChartDualYAxes data={tweetCovidPopulationData} title={"Number of Tweets mentioning 'Covid' and Population Size in each State"} xLabel={"State"} yLabel={"Count"} />
-          <GroupedBarChartDualYAxes data={tweetLockdownPopulationData} title={"Number of Tweets mentioning 'Lockdown' and Population Size in each State"} xLabel={"State"} yLabel={"Count"} />
+          <MultiLineChartDualYAxes data={tweetCovidPopulationData} title={"Number of Tweets mentioning 'Covid' and Population Size in each State"} xLabel={"State"} yLeftLabel={"Tweet Count"} yRightLabel={"Population Size"} />
+          <GroupedBarChartDualYAxes data={tweetCovidPopulationData} title={"Number of Tweets mentioning 'Covid' and Population Size in each State"} xLabel={"State"} yLeftLabel={"Tweet Count"} yRightLabel={"Population Size"} />
+          <MultiLineChartDualYAxes data={tweetLockdownPopulationData} title={"Number of Tweets mentioning 'Lockdown' and Population Size in each State"} xLabel={"State"} yLeftLabel={"Tweet Count"} yRightLabel={"Population Size"} />
+          <GroupedBarChartDualYAxes data={tweetLockdownPopulationData} title={"Number of Tweets mentioning 'Lockdown' and Population Size in each State"} xLabel={"State"} yLeftLabel={"Tweet Count"} yRightLabel={"Population Size"} />
         </TabPanel>
       </Box>
     </div>

@@ -1,12 +1,12 @@
 import { useRef, useEffect } from "react";
-import { select, axisBottom, axisLeft, axisRight, scaleLinear, scaleBand, scaleOrdinal, max } from "d3";
+import { select, axisBottom, axisLeft, axisRight, scaleLinear, scaleOrdinal, line, max } from "d3";
 
 const margin = { top: 110, right: 150, bottom: 80, left: 150 };
 const WIDTH = 1200 - margin.left - margin.right;
 const HEIGHT = 600 - margin.top - margin.bottom;
-const colors = ["#002884", "#757ce8"];
+const colors = ["#002884", "#757ce8"]
 
-function GroupedBarChartDualYAxes({ data, title, xLabel, yLeftLabel, yRightLabel }) {
+function MultiLineChartDualYAxes({ data, title, xLabel, yLeftLabel, yRightLabel }) {
   const svgRef = useRef();
 
   useEffect(() => {
@@ -24,16 +24,15 @@ function GroupedBarChartDualYAxes({ data, title, xLabel, yLeftLabel, yRightLabel
       .text(title);
 
     // x-axis
-    const xScale = scaleBand()
-      .domain(data.map(({ key }) => key))
+    const xScale = scaleLinear()
+      .domain([0, data.length - 1])
       .range([0, WIDTH])
-      .padding(0.5);
-    const xSubScale = scaleBand()
-      .domain(data.map(({ value }) => Object.keys(value)).flat())
-      .range([0, xScale.bandwidth()]);
+    const xAxis = axisBottom(xScale)
+      .ticks(data.length)
+      .tickFormat(index => data[index]["key"]);
     svg.select(".x-axis")
       .style("transform", `translateY(${HEIGHT}px)`)
-      .call(axisBottom(xScale));
+      .call(xAxis);
 
     // x-label
     svg.select(".x-label")
@@ -99,24 +98,25 @@ function GroupedBarChartDualYAxes({ data, title, xLabel, yLeftLabel, yRightLabel
       .attr("text-anchor", "left")
       .style("alignment-baseline", "middle")
     
-    // bars
+    // lines
+    const myLeftLine = line()
+      .x((_, i) => xScale(i))
+      .y(({ value }) => yLeftScale(value));
+    const myRightLine = line()
+      .x((_, i) => xScale(i))
+      .y(({ value }) => yRightScale(value));
     svg.select(".chart")
-      .selectAll(".bars")
-      .data(data)
+      .selectAll(".lines")
+      .data(Object.keys(data[0]["value"]).map(key => ({"key": key, "value": data.map(obj => ({"key": obj["key"], "value": obj["value"][key]}))})))
       .join("g")
-      .attr("class", "bars")
-      .style("transform", ({ key }) => `translateX(${xScale(key)}px)`)
-      .selectAll(".bar")
-      .data(({ value }) => Object.keys(value).map(key => ({"key": key, "value": value[key]})))
-      .join("rect")
-      .attr("class", "bar")
-      .style("transform", "scale(1, -1)")
-      .attr("x", ({ key }) => xSubScale(key))
-      .attr("y", -1 * HEIGHT)
-      .attr("width", xSubScale.bandwidth())
-      .transition()
-      .attr("height", ({ key, value }) => key === Object.keys(data[0]["value"])[0] ? HEIGHT - yLeftScale(value) : HEIGHT - yRightScale(value))
-      .attr("fill", ({ key }) => color(key));
+      .attr("class", "lines")
+      .selectAll(".line")
+      .data(data => [data])
+      .join("path")
+      .attr("class", "line")
+      .attr("d", ({ key , value}) => key === Object.keys(data[0]["value"])[0] ? myLeftLine(value) : myRightLine(value))
+      .attr("fill", "none")
+      .attr("stroke", color)
   }, [data, title, xLabel, yLeftLabel, yRightLabel]);
 
   return (
@@ -135,4 +135,4 @@ function GroupedBarChartDualYAxes({ data, title, xLabel, yLeftLabel, yRightLabel
   );
 }
 
-export default GroupedBarChartDualYAxes;
+export default MultiLineChartDualYAxes;

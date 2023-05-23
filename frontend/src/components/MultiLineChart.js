@@ -28,7 +28,7 @@ function MultiLineChart({ data, title, xLabel, yLabel }) {
       .range([0, WIDTH])
     const xAxis = axisBottom(xScale)
       .ticks(data.length)
-      .tickFormat(index => data[index]['key']);
+      .tickFormat(index => data[index]["key"]);
     svg.select(".x-axis")
       .style("transform", `translateY(${HEIGHT}px)`)
       .call(xAxis);
@@ -60,13 +60,13 @@ function MultiLineChart({ data, title, xLabel, yLabel }) {
       .range(["#002884", "#757ce8"])
 
     // legend
-    svg.select(".legend")
+   svg.select(".legend")
       .selectAll(".dot")
       .data(Object.keys(data[0].value))
       .join("circle")
       .attr("class", "dot")
-      .attr("cx", WIDTH - 50)
-      .attr("cy", (_, i) => 10 + i * 25)
+      .attr("cx", WIDTH)
+      .attr("cy", (_, i) => -(3 * margin.top / 5) + i * 25)
       .attr("r", 7)
       .style("fill", key => color(key))
 
@@ -75,8 +75,8 @@ function MultiLineChart({ data, title, xLabel, yLabel }) {
       .data(Object.keys(data[0].value))
       .join("text")
       .attr("class", "label")
-      .attr("x", WIDTH - 30)
-      .attr("y", (_, i) => 10 + i * 25)
+      .attr("x", WIDTH + 20)
+      .attr("y", (_, i) => -(3 * margin.top / 5) + i * 25)
       .text(key => key)
       .attr("text-anchor", "left")
       .style("alignment-baseline", "middle")
@@ -87,11 +87,11 @@ function MultiLineChart({ data, title, xLabel, yLabel }) {
       .y(({ value }) => yScale(value));
     svg.select(".chart")
       .selectAll(".lines")
-      .data(Object.keys(data[0]['value']).map(key2 => ({"key": key2, "value": data.map(obj => ({"key": obj['key'], "value": obj['value'][key2]}))})))
+      .data(Object.keys(data[0]["value"]).map(key2 => ({"key": key2, "value": data.map(obj => ({"key": obj["key"], "value": obj["value"][key2]}))})))
       .join("g")
       .attr("class", "lines")
       .selectAll(".line")
-      .data(data => [data['value']])
+      .data(data => [data["value"]])
       .join("path")
       .attr("class", "line")
       .attr("d", myLine)
@@ -100,14 +100,14 @@ function MultiLineChart({ data, title, xLabel, yLabel }) {
   }, [data, title, xLabel, yLabel]);
 
   return (
-    <svg ref={svgRef} style={{ margin: '50px', border: '1px solid black' }}>
-      <g className='chart' transform={`translate(${margin.left}, ${margin.top})`}>
-        <text className='title' />
+    <svg ref={svgRef} style={{ margin: "50px", border: "1px solid black" }}>
+      <g className="chart" transform={`translate(${margin.left}, ${margin.top})`}>
+        <text className="title" />
         <g className="x-axis" />
-        <text className='x-label' />
+        <text className="x-label" />
         <g className="y-axis" />
-        <text className='y-label' />
-        <g className='legend' />
+        <text className="y-label" />
+        <g className="legend" />
       </g>
     </svg>
   );

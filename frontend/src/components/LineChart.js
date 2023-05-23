@@ -28,7 +28,7 @@ function LineChart({ data, title, xLabel, yLabel }) {
       .range([0, WIDTH])
     const xAxis = axisBottom(xScale)
       .ticks(data.length)
-      .tickFormat(index => data[index]['key']);
+      .tickFormat(index => data[index]["key"]);
     svg.select(".x-axis")
       .style("transform", `translateY(${HEIGHT}px)`)
       .call(xAxis);
@@ -69,13 +69,13 @@ function LineChart({ data, title, xLabel, yLabel }) {
   }, [data, title, xLabel, yLabel]);
 
   return (
-    <svg ref={svgRef} style={{ margin: '50px', border: '1px solid black' }}>
-      <g className='chart' transform={`translate(${margin.left}, ${margin.top})`}>
-        <text className='title' />
+    <svg ref={svgRef} style={{ margin: "50px", border: "1px solid black" }}>
+      <g className="chart" transform={`translate(${margin.left}, ${margin.top})`}>
+        <text className="title" />
         <g className="x-axis" />
-        <text className='x-label' />
+        <text className="x-label" />
         <g className="y-axis" />
-        <text className='y-label' />
+        <text className="y-label" />
       </g>
     </svg>
   );
