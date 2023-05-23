@@ -6,6 +6,7 @@ import TimelineIcon from "@mui/icons-material/Timeline";
 import LanguageIcon from "@mui/icons-material/Language";
 import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
 import PeopleIcon from "@mui/icons-material/People";
+import PieChartIcon from '@mui/icons-material/PieChart';
 
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -17,8 +18,10 @@ import Typography from "@mui/material/Typography";
 import BarChart from "./components/BarChart";
 import GroupedBarChartDualYAxes from "./components/GroupedBarChartDualYAxes";
 import MultiLineChart from "./components/MultiLineChart";
+// import PieChart from './components/PieChart';
 
 import mastodonLanguageData from "./data/Language_Mastodon.json";
+import tweetProportionData from "./data/count.json";
 import covidImg from "./data/covid.jpg";
 
 import "./App.css";
@@ -276,6 +279,8 @@ function App() {
             ? "Scenario 3: Comparing the number of covid and lockdown Tweets with the number of hospital"
             : value === 4
             ? "Scenario 4: Comparing the number of covid and lockdown Tweets with the population size"
+            : value === 5
+            ? "Scenario 5: Comparing the proportion of coivd and lockdown Tweets"
             : ""}
           </Typography>
         </Toolbar>
@@ -294,6 +299,7 @@ function App() {
           <Tab icon={<LanguageIcon />} label={"Language"} value={2} />
           <Tab icon={<LocalHospitalIcon />} label={"Hospital"} value={3} />
           <Tab icon={<PeopleIcon />} label={"Population"} value={4} />
+          <Tab icon={<PieChartIcon />} label={"Proportion"} value={5} />
         </Tabs>
 
         {/* Content */}
@@ -314,6 +320,7 @@ function App() {
           </Box>
         </TabPanel>
         <TabPanel value={value} index={1}>
+          {/* <PieChart data={tweetProportionData} title={"Proportion of Tweets mentioning 'Covid' and 'Lockdown'"} /> */}
           <MultiLineChart data={tweetTimelineData} title={"Number of Tweets mentioning 'Lockdown' and 'Covid' Timeline"} xLabel={"Month"} yLabel={"Count"} /> 
         </TabPanel>
         <TabPanel value={value} index={2}>
@@ -332,6 +339,9 @@ function App() {
           <GroupedBarChartDualYAxes data={tweetCovidPopulationData2} title={"Number of Tweets mentioning 'Covid' and Population Size in each State"} xLabel={"State"} yLeftLabel={"Tweet Count"} yRightLabel={"Population Size"} />
           <MultiLineChartDualYAxes data={tweetLockdownPopulationData} title={"Number of Tweets mentioning 'Lockdown' and Population Size in each State"} xLabel={"State"} yLeftLabel={"Tweet Count"} yRightLabel={"Population Size"} />
           <GroupedBarChartDualYAxes data={tweetLockdownPopulationData2} title={"Number of Tweets mentioning 'Lockdown' and Population Size in each State"} xLabel={"State"} yLeftLabel={"Tweet Count"} yRightLabel={"Population Size"} />
+        </TabPanel>
+        <TabPanel value={value} index={5}>
+          <BarChart data={tweetProportionData.rows} title={"Proportion of Tweets mentioning 'Covid' and 'Lockdown'"} />
         </TabPanel>
       </Box>
     </div>
