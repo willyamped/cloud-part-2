@@ -267,7 +267,7 @@ function App() {
         <Toolbar>
           <Typography variant="h5">
             {value === 0
-            ? "COMP90054 Assignment 2"
+            ? "COMP90024 Assignment 2"
             : value === 1
             ? "Scenario 1: Comparing the number of covid and lockdown data released each month"
             : value === 2
