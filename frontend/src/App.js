@@ -22,6 +22,7 @@ import PieChart from './components/PieChart';
 
 import mastodonLanguageData from "./data/Language_Mastodon.json";
 import mastodonProportionData from "./data/count.json";
+import tweetCovidHospitalSuburbData from "./data/Tweet_Hospital_Number_Covid_top15.json";
 import covidImg from "./data/covid.jpg";
 
 import "./App.css";
@@ -261,7 +262,15 @@ function App() {
       setTweetLockdownPopulationData2(temp)
     }
   }, [populationData, tweetLockdownStateData])
-  
+  // multi line chart
+  const lines = Object.keys(tweetCovidHospitalSuburbData.rows[0]['value'])
+  const processedTweetCovidHospitalSuburbData = []
+  for (let i = 0; i < lines.length; i++) {
+    processedTweetCovidHospitalSuburbData.push({
+      "key": lines[i],
+      "value": tweetCovidHospitalSuburbData.rows.map(({ key, value }) => ({"key": key, "value": value[lines[i]]}))
+    })
+  }
 
   return (
     <div>
@@ -332,6 +341,8 @@ function App() {
           <GroupedBarChartDualYAxes data={tweetCovidHospitalData2} title={"Number of Tweets mentioning 'Covid' and Number of Hospital in each State"} xLabel={"State"} yLeftLabel={"Tweet Count"} yRightLabel={"Hospital Count"} />
           <MultiLineChartDualYAxes data={tweetLockdownHospitalData} title={"Number of Tweets mentioning 'Lockdown' and Number of Hospital in each State"} xLabel={"State"} yLeftLabel={"Tweet Count"} yRightLabel={"Hospital Count"} />
           <GroupedBarChartDualYAxes data={tweetLockdownHospitalData2} title={"Number of Tweets mentioning 'Lockdown' and Number of Hospital in each State"} xLabel={"State"} yLeftLabel={"Tweet Count"} yRightLabel={"Hospital Count"} />
+          <MultiLineChartDualYAxes data={processedTweetCovidHospitalSuburbData} title={"Number of Tweets mentioning 'Covid' and Number of Hospital in Top 15 Suburbs"} xLabel={"Suburb"} yLeftLabel={"Tweet Count"} yRightLabel={"Hospital Count"} tilt={true} />
+          <GroupedBarChartDualYAxes data={tweetCovidHospitalSuburbData.rows} title={"Number of Tweets mentioning 'Covid' and Number of Hospital in Top 15 Suburbs"} xLabel={"Suburb"} yLeftLabel={"Tweet Count"} yRightLabel={"Hospital Count"} tilt={true} />
         </TabPanel>
         <TabPanel value={value} index={4}>
           <MultiLineChartDualYAxes data={tweetCovidPopulationData} title={"Number of Tweets mentioning 'Covid' and Population Size in each State"} xLabel={"State"} yLeftLabel={"Tweet Count"} yRightLabel={"Population Size"} />

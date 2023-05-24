@@ -40,7 +40,6 @@ function PieChart({ data, title }) {
         .style("fill", color)
 
       const total = data.reduce((prev, curr) => prev + curr['value'], 0)
-      console.log(total)
       svg.select(".legend")
         .selectAll(".label")
         .data(data)

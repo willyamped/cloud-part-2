@@ -6,7 +6,7 @@ const WIDTH = 1200 - margin.left - margin.right;
 const HEIGHT = 600 - margin.top - margin.bottom;
 const colors = ["#002884", "#757ce8"]
 
-function MultiLineChartDualYAxes({ data, title, xLabel, yLeftLabel, yRightLabel }) {
+function MultiLineChartDualYAxes({ data, title, xLabel, yLeftLabel, yRightLabel, tilt=false }) {
   const svgRef = useRef();
 
   useEffect(() => {
@@ -31,9 +31,20 @@ function MultiLineChartDualYAxes({ data, title, xLabel, yLeftLabel, yRightLabel 
       const xAxis = axisBottom(xScale)
         .ticks(data[0]['value'].length)
         .tickFormat(index => data[0]['value'][index]["key"]);
-      svg.select(".x-axis")
+      if (tilt) {
+        svg.select(".x-axis")
         .style("transform", `translateY(${HEIGHT}px)`)
-        .call(xAxis);
+        .call(xAxis)
+        .selectAll("text")
+        .style("text-anchor", "end")
+        .attr("dx", "2em")
+        .attr("dy", "1em")
+        .attr("transform", "rotate(-10)")
+      } else {
+        svg.select(".x-axis")
+        .style("transform", `translateY(${HEIGHT}px)`)
+        .call(xAxis)
+      }
 
       // x-label
       svg.select(".x-label")
@@ -119,7 +130,7 @@ function MultiLineChartDualYAxes({ data, title, xLabel, yLeftLabel, yRightLabel 
         .attr("fill", "none")
         .attr("stroke", color)
     }
-  }, [data, title, xLabel, yLeftLabel, yRightLabel]);
+  }, [data, title, xLabel, yLeftLabel, yRightLabel, tilt]);
 
   return (
     <svg ref={svgRef} style={{ margin: "50px", border: "1px solid black" }}>

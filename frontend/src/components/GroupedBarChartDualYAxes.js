@@ -6,7 +6,7 @@ const WIDTH = 1200 - margin.left - margin.right;
 const HEIGHT = 600 - margin.top - margin.bottom;
 const colors = ["#002884", "#757ce8"];
 
-function GroupedBarChartDualYAxes({ data, title, xLabel, yLeftLabel, yRightLabel }) {
+function GroupedBarChartDualYAxes({ data, title, xLabel, yLeftLabel, yRightLabel, tilt=false }) {
   const svgRef = useRef();
 
   useEffect(() => {
@@ -32,9 +32,20 @@ function GroupedBarChartDualYAxes({ data, title, xLabel, yLeftLabel, yRightLabel
       const xSubScale = scaleBand()
         .domain(data.map(({ value }) => Object.keys(value)).flat())
         .range([0, xScale.bandwidth()]);
-      svg.select(".x-axis")
+      if (tilt) {
+        svg.select(".x-axis")
+        .style("transform", `translateY(${HEIGHT}px)`)
+        .call(axisBottom(xScale))
+        .selectAll("text")
+        .style("text-anchor", "end")
+        .attr("dx", "2em")
+        .attr("dy", "1em")
+        .attr("transform", "rotate(-10)")
+      } else {
+        svg.select(".x-axis")
         .style("transform", `translateY(${HEIGHT}px)`)
         .call(axisBottom(xScale));
+      }
 
       // x-label
       svg.select(".x-label")
@@ -119,7 +130,7 @@ function GroupedBarChartDualYAxes({ data, title, xLabel, yLeftLabel, yRightLabel
         .attr("height", ({ key, value }) => key === Object.keys(data[0]["value"])[0] ? HEIGHT - yLeftScale(value) : HEIGHT - yRightScale(value))
         .attr("fill", ({ key }) => color(key));
       }
-  }, [data, title, xLabel, yLeftLabel, yRightLabel]);
+  }, [data, title, xLabel, yLeftLabel, yRightLabel, tilt]);
 
   return (
     <svg ref={svgRef} style={{ margin: "50px", border: "1px solid black" }}>
