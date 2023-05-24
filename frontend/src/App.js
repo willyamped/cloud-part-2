@@ -18,7 +18,7 @@ import Typography from "@mui/material/Typography";
 import BarChart from "./components/BarChart";
 import GroupedBarChartDualYAxes from "./components/GroupedBarChartDualYAxes";
 import MultiLineChart from "./components/MultiLineChart";
-// import PieChart from './components/PieChart';
+import PieChart from './components/PieChart';
 
 import mastodonLanguageData from "./data/Language_Mastodon.json";
 import tweetProportionData from "./data/count.json";
@@ -320,7 +320,6 @@ function App() {
           </Box>
         </TabPanel>
         <TabPanel value={value} index={1}>
-          {/* <PieChart data={tweetProportionData} title={"Proportion of Tweets mentioning 'Covid' and 'Lockdown'"} /> */}
           <MultiLineChart data={tweetTimelineData} title={"Number of Tweets mentioning 'Lockdown' and 'Covid' Timeline"} xLabel={"Month"} yLabel={"Count"} /> 
         </TabPanel>
         <TabPanel value={value} index={2}>
@@ -341,7 +340,7 @@ function App() {
           <GroupedBarChartDualYAxes data={tweetLockdownPopulationData2} title={"Number of Tweets mentioning 'Lockdown' and Population Size in each State"} xLabel={"State"} yLeftLabel={"Tweet Count"} yRightLabel={"Population Size"} />
         </TabPanel>
         <TabPanel value={value} index={5}>
-          <BarChart data={tweetProportionData.rows} title={"Proportion of Tweets mentioning 'Covid' and 'Lockdown'"} />
+          <PieChart data={tweetProportionData.rows} title={"Proportion of Tweets mentioning 'Covid' and 'Lockdown'"} />
         </TabPanel>
       </Box>
     </div>

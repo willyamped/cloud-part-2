@@ -28,12 +28,32 @@ function PieChart({ data, title }) {
       const color = scaleOrdinal()
         .range(colors)
 
+      // legend
+      svg.select(".legend")
+        .selectAll(".dot")
+        .data(data.map(({ key }) => key))
+        .join("circle")
+        .attr("class", "dot")
+        .attr("cx", WIDTH)
+        .attr("cy", (_, i) => -(3 * margin.top / 5) + i * 25)
+        .attr("r", 7)
+        .style("fill", color)
+
+      svg.select(".legend")
+        .selectAll(".label")
+        .data(data.map(({ key }) => key))
+        .join("text")
+        .attr("class", "label")
+        .attr("x", WIDTH + 20)
+        .attr("y", (_, i) => -(3 * margin.top / 5) + i * 25)
+        .text(key => key)
+        .attr("text-anchor", "left")
+        .style("alignment-baseline", "middle")
+
       // pie
-      const radius = HEIGHT / 2 - margin.top - margin.bottom;
+      const radius = HEIGHT / 2;
       const myPie = pie()
-        .value(({ value }) => {
-          console.log('value', value)
-          return value})
+        .value(({ value }) => value)
       const myArc = arc()
         .innerRadius(0)
         .outerRadius(radius);
@@ -43,11 +63,9 @@ function PieChart({ data, title }) {
         .data(myPie(data))
         .join("path")
         .attr("class", "pie")
+        .attr("transform", `translate(${WIDTH / 2}, ${HEIGHT / 2})`)
         .attr("d", myArc)
-        .attr("fill", data => {
-          console.log(data['data']['key'])
-          return color(data['data']['key'])})
-        .attr("stroke", "black")
+        .attr("fill", color);
     }
   }, [data, title]);
 
@@ -55,6 +73,7 @@ function PieChart({ data, title }) {
     <svg ref={svgRef} style={{ margin: "50px", border: "1px solid black" }}>
       <g className="chart" transform={`translate(${margin.left}, ${margin.top})`}>
         <text className="title" />
+        <g className="legend" />
       </g>
     </svg>
   );
