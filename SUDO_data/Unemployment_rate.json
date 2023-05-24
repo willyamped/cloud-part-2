@@ -1,0 +1,1202 @@
+[
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2018-04",
+    "Value": 12.45984,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2018-05",
+    "Value": 11.45203,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2018-06",
+    "Value": 11.26836,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2018-07",
+    "Value": 11.12028,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2018-08",
+    "Value": 11.81509,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2018-09",
+    "Value": 11.49638,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2018-10",
+    "Value": 11.42519,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2018-11",
+    "Value": 11.68859,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2018-12",
+    "Value": 11.40099,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2019-01",
+    "Value": 11.48394,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2019-02",
+    "Value": 11.03665,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2019-03",
+    "Value": 11.7866,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2019-04",
+    "Value": 11.88708,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2019-05",
+    "Value": 11.81952,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2019-06",
+    "Value": 12.11316,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2019-07",
+    "Value": 12.00488,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2019-08",
+    "Value": 11.8082,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2019-09",
+    "Value": 11.7797,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2019-10",
+    "Value": 12.5469,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2019-11",
+    "Value": 11.65222,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2019-12",
+    "Value": 11.72313,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2020-01",
+    "Value": 12.2039,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2020-02",
+    "Value": 12.11373,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2020-03",
+    "Value": 11.61243,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2020-04",
+    "Value": 14.03255,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2020-05",
+    "Value": 15.6192,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2020-06",
+    "Value": 16.46093,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2020-07",
+    "Value": 16.57614,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2020-08",
+    "Value": 14.03765,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2020-09",
+    "Value": 14.5997,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2020-10",
+    "Value": 15.59119,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2020-11",
+    "Value": 15.76895,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2020-12",
+    "Value": 14.0828,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2021-01",
+    "Value": 14.01577,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2021-02",
+    "Value": 12.78135,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2021-03",
+    "Value": 11.73439,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2021-04",
+    "Value": 10.59119,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2021-05",
+    "Value": 10.5394,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2021-06",
+    "Value": 10.3674,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2021-07",
+    "Value": 10.33495,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2021-08",
+    "Value": 10.39511,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2021-09",
+    "Value": 10.84318,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2021-10",
+    "Value": 13.15306,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2021-11",
+    "Value": 10.97245,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2021-12",
+    "Value": 9.456658,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2022-01",
+    "Value": 8.973586,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2022-02",
+    "Value": 9.092844,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2022-03",
+    "Value": 8.263538,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2022-04",
+    "Value": 8.705364,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2022-05",
+    "Value": 8.725872,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2022-06",
+    "Value": 7.982395,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2022-07",
+    "Value": 7.136009,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2022-08",
+    "Value": 8.431588,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2022-09",
+    "Value": 7.799725,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2022-10",
+    "Value": 7.293522,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2022-11",
+    "Value": 7.715877,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2022-12",
+    "Value": 7.684991,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2023-01",
+    "Value": 7.855443,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2023-02",
+    "Value": 7.924962,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "15_24",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2023-03",
+    "Value": 7.753088,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2018-04",
+    "Value": 4.168797,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2018-05",
+    "Value": 4.203953,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2018-06",
+    "Value": 4.16564,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2018-07",
+    "Value": 4.175642,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2018-08",
+    "Value": 4.003404,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2018-09",
+    "Value": 3.773173,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2018-10",
+    "Value": 3.772093,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2018-11",
+    "Value": 3.829865,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2018-12",
+    "Value": 3.771988,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2019-01",
+    "Value": 3.791267,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2019-02",
+    "Value": 3.778354,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2019-03",
+    "Value": 3.766924,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2019-04",
+    "Value": 3.916326,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2019-05",
+    "Value": 3.924305,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2019-06",
+    "Value": 3.937382,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2019-07",
+    "Value": 3.99114,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2019-08",
+    "Value": 4.022473,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2019-09",
+    "Value": 3.972418,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2019-10",
+    "Value": 3.918558,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2019-11",
+    "Value": 3.939153,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2019-12",
+    "Value": 3.786594,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2020-01",
+    "Value": 3.940665,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2020-02",
+    "Value": 3.73065,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2020-03",
+    "Value": 3.986317,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2020-04",
+    "Value": 4.948607,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2020-05",
+    "Value": 5.539103,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2020-06",
+    "Value": 5.830069,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2020-07",
+    "Value": 5.875694,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2020-08",
+    "Value": 5.520252,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2020-09",
+    "Value": 5.546719,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2020-10",
+    "Value": 5.383304,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2020-11",
+    "Value": 5.161341,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2020-12",
+    "Value": 5.199274,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2021-01",
+    "Value": 4.917385,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2021-02",
+    "Value": 4.50247,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2021-03",
+    "Value": 4.480855,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2021-04",
+    "Value": 4.465432,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2021-05",
+    "Value": 4.05109,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2021-06",
+    "Value": 3.984262,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2021-07",
+    "Value": 3.672361,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2021-08",
+    "Value": 3.524055,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2021-09",
+    "Value": 3.611288,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2021-10",
+    "Value": 3.84142,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2021-11",
+    "Value": 3.425458,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2021-12",
+    "Value": 3.185661,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2022-01",
+    "Value": 3.267376,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2022-02",
+    "Value": 3.053196,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2022-03",
+    "Value": 3.096934,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2022-04",
+    "Value": 2.957653,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2022-05",
+    "Value": 2.985275,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2022-06",
+    "Value": 2.727424,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2022-07",
+    "Value": 2.748153,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2022-08",
+    "Value": 2.56299,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2022-09",
+    "Value": 2.75523,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2022-10",
+    "Value": 2.680364,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2022-11",
+    "Value": 2.638201,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2022-12",
+    "Value": 2.715969,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2023-01",
+    "Value": 2.851679,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2023-02",
+    "Value": 2.69386,
+    "Flag Codes": ""
+  },
+  {
+    "LOCATION": "AUS",
+    "INDICATOR": "UNEMP",
+    "SUBJECT": "25_74",
+    "MEASURE": "PC_LF",
+    "FREQUENCY": "M",
+    "TIME": "2023-03",
+    "Value": 2.70269,
+    "Flag Codes": ""
+  }
+]
