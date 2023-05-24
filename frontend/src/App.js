@@ -21,7 +21,7 @@ import MultiLineChart from "./components/MultiLineChart";
 import PieChart from './components/PieChart';
 
 import mastodonLanguageData from "./data/Language_Mastodon.json";
-import tweetProportionData from "./data/count.json";
+import mastodonProportionData from "./data/count.json";
 import covidImg from "./data/covid.jpg";
 
 import "./App.css";
@@ -340,7 +340,7 @@ function App() {
           <GroupedBarChartDualYAxes data={tweetLockdownPopulationData2} title={"Number of Tweets mentioning 'Lockdown' and Population Size in each State"} xLabel={"State"} yLeftLabel={"Tweet Count"} yRightLabel={"Population Size"} />
         </TabPanel>
         <TabPanel value={value} index={5}>
-          <PieChart data={tweetProportionData.rows} title={"Proportion of Tweets mentioning 'Covid' and 'Lockdown'"} />
+          <PieChart data={mastodonProportionData.rows} title={"Proportion of Mastodon Toots mentioning 'Covid' and 'Lockdown'"} />
         </TabPanel>
       </Box>
     </div>
