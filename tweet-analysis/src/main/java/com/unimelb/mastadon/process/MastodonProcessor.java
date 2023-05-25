@@ -24,8 +24,9 @@ import org.json.simple.JSONValue;
 public class MastodonProcessor {
 
 	public static void main(String[] args) throws FileNotFoundException, IOException {
-		String filePath = args[0];
-		String searchString =args[1];
+		String filePath = "E:\\kokila\\Cloud-Data\\mastadon\\data1.json";
+		
+		String searchString ="covid,lockdown";
 		StringBuilder jsonString = new StringBuilder();
 		boolean firstRecord = true;
 		String tempString ="";
@@ -67,6 +68,7 @@ public class MastodonProcessor {
 private static boolean filerJSONString(String json, String searchString) {
 		System.out.println("json::"+json);
 		JSONObject object = (JSONObject) JSONValue.parse(json);
+		String [] searchStr = searchString.split(",");
 
 		Set<String> keySet = null;
 		try {
@@ -78,7 +80,7 @@ private static boolean filerJSONString(String json, String searchString) {
 
 			if (key.equals("content")) {
 				Object value = object.get(key);
-				if (StringUtils.containsIgnoreCase(value.toString(),searchString)) {
+				if (!StringUtils.containsIgnoreCase(value.toString(),searchStr[0]) && !StringUtils.containsIgnoreCase(value.toString(),searchStr[1])) {
 					return true;
 				}
 			}
@@ -90,7 +92,7 @@ private static boolean filerJSONString(String json, String searchString) {
 
 private static  void uploadDataToCouchDB(String json)
 {
-	String dbUrl = "http://172.26.134.11:80/willy-test";
+	String dbUrl = "http://172.26.134.11:80/mastodon-others";
     
     try {
       

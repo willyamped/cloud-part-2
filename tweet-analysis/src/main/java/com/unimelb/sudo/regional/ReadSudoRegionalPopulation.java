@@ -34,8 +34,8 @@ public class ReadSudoRegionalPopulation {
 			for (Object key : keySet) {
 				if(key.toString().equals("features")) {
 					List<JSONObject> list = (List<JSONObject>) object.get(key);
-					JSONObject json = list.get(0);
-					uploadDataToCouchDB(json.toString());
+					list.forEach(json->uploadDataToCouchDB(json.toString()));
+					
 				}
 			}
 		}
@@ -43,7 +43,7 @@ public class ReadSudoRegionalPopulation {
 	
 	public static void uploadDataToCouchDB(String json)
 	{
-		String dbUrl = "http://172.26.134.11:80/regional_population";
+		String dbUrl = "http://172.26.134.11:80/sudo-regional-population";
         
         try {
           

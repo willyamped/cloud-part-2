@@ -56,6 +56,7 @@ public class MastadonProcessThread implements Runnable {
 	private static boolean filerJSONString(String json, String searchString) {
 		
 		JSONObject object = (JSONObject) JSONValue.parse(json);
+		String [] searchStringAry = searchString.split(",");
 
 		Set<String> keySet = null;
 		try {
@@ -67,7 +68,7 @@ public class MastadonProcessThread implements Runnable {
 
 			if (key.equals("content")) {
 				Object value = object.get(key);
-				if (StringUtils.containsIgnoreCase(value.toString(),searchString)) {
+				if ( (!StringUtils.containsIgnoreCase(value.toString(),searchStringAry[0])) && (!StringUtils.containsIgnoreCase(value.toString(),searchStringAry[1]))) {
 					return true;
 				}
 			}
@@ -80,7 +81,7 @@ public class MastadonProcessThread implements Runnable {
 	public static void main(String[] args) {
 		ExecutorService executor = Executors.newFixedThreadPool(4);
 
-		MastadonProcessThread task1 = new MastadonProcessThread("E:\\kokila\\Cloud-Data\\mastadon\\Mastodon data\\outfile2.json","lockdown","E:\\kokila\\Cloud-Data\\mastadon\\Mastodon data\\","lockdown1.json");
+		MastadonProcessThread task1 = new MastadonProcessThread("E:\\kokila\\Cloud-Data\\mastadon\\Mastodon data\\outfile2.json","lockdown,covid","E:\\kokila\\Cloud-Data\\mastadon\\Mastodon data\\","others2.json");
 		
 		executor.submit(task1);
 	
