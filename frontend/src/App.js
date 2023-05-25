@@ -289,7 +289,7 @@ function App() {
             : value === 4
             ? "Scenario 4: Comparing the number of covid and lockdown Tweets with the population size"
             : value === 5
-            ? "Scenario 5: Comparing the proportion of coivd and lockdown Tweets"
+            ? "Scenario 5: Comparing the proportion of coivd and lockdown Mastodon Toots"
             : ""}
           </Typography>
         </Toolbar>
